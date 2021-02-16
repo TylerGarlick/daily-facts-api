@@ -1,0 +1,37 @@
+scalar Date
+
+enum Month {
+  JANUARY,
+  FEBRUARY,
+  MARCH,
+  APRIL,
+  MAY,
+  JUNE,
+  JULY,
+  AUGUST,
+  SEPTEMBER,
+  OCTOBER,
+  NOVEMBER,
+  DECEMBER
+}
+enum Region {
+  GLOBAL,
+  NATIONAL,
+  LOCAL,
+  OTHER
+}
+
+type Fact {
+  month: Month!
+  day: Int!
+  title: String!
+  region: Region,
+  orgins: String,
+  beganAt: Date,
+  durationInDays: Int
+}
+
+
+type Query {
+  facts(month: Month!, day: Int!): [Fact!]!
+}
